@@ -6,8 +6,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
   // Configure o CORS para permitir solicitações de todas as origens
-  app.use(cors());
-
+  app.use(cors({
+    origin: '*', // Permite solicitações de todas as origens
+  }));
   await app.listen(3000);
 }
 bootstrap();
