@@ -13,7 +13,7 @@ export class VeiculoController {
     return this.veiculoService.atualizarLocalizacao(placa, posicaoAtual);
   }
 
-  @Get('localizar-veiculo')
+  @Post('localizar-veiculo')
   async pegarLocalizacao(@Body() body: { placa: string;}): Promise<any> {
     const { placa } = body;
     return this.veiculoService.pegarLocalizacao(placa);
